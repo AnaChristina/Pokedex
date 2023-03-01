@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import Pesquisa from './components/Pesquisa';
 import reportWebVitals from './reportWebVitals';
+import Card from './components/Card'
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

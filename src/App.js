@@ -3,12 +3,14 @@ import './App.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
+
 function App() {
 
   const [ posts, setPosts ] = useState([])
 
+  const API = "https://pokeapi.co/api/v2/pokemon?limit=10&offset=0"  //variavel API recebe o link da api do pokemon
   useEffect(() =>{
-    axios.get("https://pokeapi.co/api/v2/pokemon?limit=50&offset=0")  //fzd requisição API 
+    axios.get(API)  //fzd requisição API 
     .then((response) => { //o response esta se referindo a função axios da linha de cima. resposta do servidor.
       // console.log(response.data)  //fazendo aparecer nome dos pokemons no console. 
       //setPosts(response.data)
@@ -25,6 +27,22 @@ function App() {
   },
 [])
 
+function kek(name)
+{
+   const url = 'https://pokeapi.co/api/v2/pokemon';
+    axios.get(`${url}/${name}`).then((response) =>
+    {
+      console.log(response)
+    })
+}
+
+
+// function alertaAi()
+// {
+//   alert()
+// }
+
+
 //Então, ali em cima na UIseEffect, a gente faz a requisição e então definimos o response.results como sendo o post.
 // nessa parte do codigo ali, eu pego o posts que é um array, e uso um metodo javascript para percorrer o array e me ter um retorno.
 // para cada item desse array, eu vou chamar de pokimon, mas eu poderia chamar de abacaxi ou item, tanto faz. é só pra referenciar o item no laço
@@ -34,10 +52,9 @@ function App() {
     
     <div>
       {posts?.map((item) => (
-        <div>
-          <button>{ item.name }</button>
+        <div key={item.name}>
           
-          <p>{ item.hability }</p>
+          <h1 onClick={() => kek(item.name)}>{ item.name }</h1>
         </div>
       ))}
     </div>
