@@ -1,0 +1,30 @@
+.quadro {
+    width: 600px;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    margin-left: 15px;
+    margin-bottom: 30px;
+    border-radius: 13px;
+    background-color: #EFEFEF;
+  }
+  
+  .quadro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 34%;
+    height: 100%;
+    background-color: rgba(0, 0, 255, 0);
+    transform: skewX(45deg);
+    border-right: 2px solid black;
+  }
+  /* .imagem {
+    min-width: 50px;
+    min-height: 50px;
+  } */

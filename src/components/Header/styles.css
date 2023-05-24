@@ -1,0 +1,55 @@
+
+.estilo {
+    background-color: #FF4A4A;
+    height: 80px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+}
+
+.caido{
+    background-color: #FF4A4A;
+    height: 40px;
+    width: 20%;
+    border-bottom-right-radius: 30px;
+    box-shadow: 2px 2px 5px -2px rgba(0, 0, 0, 0.75);
+
+}
+.circulo{
+    background-color: #9DF8F8;
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    position: absolute;
+    margin: 18px 0 0 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+
+}
+
+.bola {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+
+    
+  }
+  
+  .bola.red {
+    background-color: #CF0000;
+    margin-left: 50px;
+  }
+  
+  .bola.yellow {
+    background-color: #E2E63F;
+    margin-left: 100px;
+  }
+  
+  .bola.blue {
+    background-color: #56A33B;
+  }
+  .div{
+    /* width: 70%;
+    position: center; */
+  }

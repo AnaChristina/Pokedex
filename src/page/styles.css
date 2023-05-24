@@ -1,0 +1,18 @@
+.campo {
+    display: flex;
+  }
+  
+  /* ↓↓↓↓ seleciona todos os elementos filhos diretos */
+  .campo > *{ 
+    
+    margin-right: 10px;
+  }
+  
+  .campo > *:last-child {
+    margin-right: 0;
+  }
+
+.campo > .Lista,
+.campo > .Telinha {
+  flex-shrink: 0;
+}
