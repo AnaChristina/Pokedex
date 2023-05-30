@@ -13,7 +13,7 @@ function Card({name, image, types}){
     return(
         <div className="card">
             <div className="container">
-                <div className='imagem'>
+                <div className='pokimon'>
                     <img src={image} style={{width: 100, height:100, alignItems:'center'}} alt="foto pokemon" />
                 </div> 
                 <h4><b>{name}</b></h4>

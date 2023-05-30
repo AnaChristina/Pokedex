@@ -1,6 +1,6 @@
 .lista{
   width: 280px;
-  height: 200px;
+  height: 400px;
   position: relative;
   overflow: hidden;
   border-top: 2px solid black;
@@ -10,6 +10,7 @@
   margin-left: 15px;
   margin-bottom: 150px;
   border-radius: 13px;
+  overflow: scroll;
 }
 
 .cardLista {
@@ -24,8 +25,13 @@
 
 .cardLista:hover {
   box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+  
 }
 
 .nomeLista{
   text-align: center;
 }
+.campo-telinha{
+  height: 100px;
+}
+/*  */

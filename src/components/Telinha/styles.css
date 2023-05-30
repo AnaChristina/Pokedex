@@ -1,6 +1,6 @@
 .quadro {
     width: 600px;
-    height: auto;
+    height: 400px;
     position: relative;
     overflow: hidden;
     border-top: 2px solid black;
@@ -23,8 +23,14 @@
     background-color: rgba(0, 0, 255, 0);
     transform: skewX(45deg);
     border-right: 2px solid black;
+
   }
-  /* .imagem {
-    min-width: 50px;
-    min-height: 50px;
-  } */
+  .tela{
+    background-color: black;
+    width: 500px;
+    height: 280px;
+    border-radius: 22px;
+    margin-top: 30px;
+    margin-left: 50px;
+  }
+ 

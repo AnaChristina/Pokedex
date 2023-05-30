@@ -12,6 +12,5 @@ export function Header(){
             <header  className="estilo"></header>
             <div className='caido'></div>
         </div>
-       
     )
 }

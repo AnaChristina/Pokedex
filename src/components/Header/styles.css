@@ -3,6 +3,7 @@
     background-color: #FF4A4A;
     height: 80px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+    text-align: center;
 }
 
 .caido{
@@ -32,13 +33,13 @@
     position: absolute;
     margin-top: 15px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
-
     
   }
   
   .bola.red {
     background-color: #CF0000;
     margin-left: 50px;
+    
   }
   
   .bola.yellow {
@@ -49,7 +50,11 @@
   .bola.blue {
     background-color: #56A33B;
   }
-  .div{
-    /* width: 70%;
-    position: center; */
+  .red.bola,
+  .yellow.bola,
+  .blue.bola {
+    position: absolute;
+    top: 2%;
+    left: 13%;
+    transform: translate(-50%, -50%);
   }
