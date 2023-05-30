@@ -2,8 +2,10 @@
 Criando uma Pokedex utilizando a API do Pokemon.
 ## Ainda em Desenvolvimento! 🏗🚧
 ## Ferramentas
-- ReactJS
+- ReactJS : Utilizei para criar o projeto 
 - Javascript
+- HTML : Estruturação
+- Css - Estilização
 
 
 ### Executando Projeto
