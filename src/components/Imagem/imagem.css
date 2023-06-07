@@ -1,5 +1,7 @@
- .imagem {
+.pokemon-img img{
+    width: 150px;
+    height: 150px;
     min-width: 50px;
     min-height: 50px;
-    background-color: rgb(25, 191, 0);
 }
+

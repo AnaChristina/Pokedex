@@ -6,10 +6,15 @@
     margin: 10px 10px 10px 10px;
     display: inline-block;
     margin-top: 20px;
+    opacity:0.5;
   }
 
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    background-color: rgba(135, 135, 135, 0.162);
+    transform: scale(1.08);
+    opacity:1;
+    /* filter: brightness( 50% ); */
   }
   
   .container {

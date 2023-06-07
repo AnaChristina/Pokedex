@@ -1,9 +1,14 @@
 import React from "react";
 import './imagem.css';
 
+const Imagem = ({ pokemon }) => {
+    return (
+        <div className="pokemon-img brilho">
+            {pokemon && (
+                <img src={pokemon.sprites.other['dream_world'].front_default} alt="Pokemon" />
+            )}
+        </div>
+    );
+};
 
-function Imagem(){
-    return(
-        <div className="imagem"></div>
-    )
-}; export default Imagem;
+export default Imagem;

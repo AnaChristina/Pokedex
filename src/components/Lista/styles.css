@@ -25,7 +25,7 @@
 
 .cardLista:hover {
   box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
-  
+  background-color: rgba(135, 135, 135, 0.162);
 }
 
 .nomeLista{
@@ -34,4 +34,4 @@
 .campo-telinha{
   height: 100px;
 }
-/*  */
+

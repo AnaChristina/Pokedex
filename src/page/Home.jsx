@@ -17,7 +17,7 @@ export const Home = () => {
 
     const getPokemons = async () => {
         var endpoints = []
-        for (var i = 1; i <= 9; i++) {
+        for (var i = 1; i <= 20; i++) {
             endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
         }
 
@@ -40,23 +40,73 @@ export const Home = () => {
                 filtroPokemon.push(pokemons[i]);
             }
         }
-        
+
         setPokemons(filtroPokemon);
     };
+
+
+
+
+
+    const PesquisaPokemons = (name) => {
+        if (name === "") {
+          getPokemons();
+        } else {
+          TestePokemon(name);
+        }
+      };
+      
+      const TestePokemon = async (name) => {
+        try {
+          const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=150`);
+          const pokemonList = response.data.results;
+          const endpoints = pokemonList.map((pokemon) => pokemon.url);
+      
+          const pokemonResponses = await axios.all(endpoints.map((endpoint) => axios.get(endpoint)));
+          const pokemonData = pokemonResponses.map((res) => res.data);
+      
+          const filteredPokemons = pokemonData.filter((pokemon) => pokemon.name.includes(name));
+      
+          setPokemons(filteredPokemons);
+        } catch (error) {
+          console.log('Erro ao buscar os pokémons:', error);
+        }
+      };
+      
+    
+    
+    
+    
+    
+    
+    
+    
+
 
     return (
         <div>
             
             <Header />
             <Pesquisa PesquisaPokemon={PesquisaPokemon} />
-            <div PesquisaPokemon={PesquisaPokemon}>
+
+            <div>
+            {pokemons.map((pokemonData, key) => (
+                    <div name={pokemonData.name} image={pokemonData.sprites.other.dream_world.front_default} types ={pokemonData.types} key={key} />
+                ))}
+            </div>
+
+
+
+
+
+            <div PesquisaPokemons={PesquisaPokemons}>
                 {pokemons.map((pokemon, key) => (
                     <Card name={pokemon.name} image={pokemon.sprites.other.dream_world.front_default} types ={pokemon.types} key={key} />
                 ))}    
             </div>
             <div className="campo">
                 <Lista pokemons={pokemons} />
-                < Telinha />
+                < Telinha pokemons={pokemons} />
             </div>
            
         </div>
