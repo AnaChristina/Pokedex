@@ -4,13 +4,13 @@ import Infos from "../Infos";
 import Imagem from "../Imagem";
 import Seta from "../Seta";
 
-const Telinha = ({pokemons}) => {
+const Telinha = ({pokemonSelecionado}) => {
     return(
         <div className="quadro">
             <div className="tela">
                 <div className="Info-Pokemon">< Infos /></div>
                 <div className="pokemon-img">
-                    < Imagem pokemon={pokemons[0]}/>
+                    < Imagem src= {pokemonSelecionado} />
                 </div>
             </div>
             <div className="div-seta">< Seta /></div>

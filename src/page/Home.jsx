@@ -1,5 +1,4 @@
 import './styles.css';
-
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Pesquisa from '../components/Pesquisa/Pesquisa'
@@ -7,16 +6,26 @@ import Card from "../components/Card";
 import { Header } from "../components/Header";
 import Lista from "../components/Lista";
 import Telinha from "../components/Telinha";
-import Seta from "../components/Seta";
 
 
 export const Home = () => {
-    const [pokemons, setPokemons] = useState([]);
 
+    // aparece foto do pokemon qnd clicado o nome dele na lista.
+    const [pokemonSelecionado, setPokemonSelecionado] = useState(
+        `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg`
+      );
+    
+      const selecionarPokemon = (pokemon) => {
+        setPokemonSelecionado(pokemon.sprites.other.dream_world.front_default);
+    };
+  
+
+
+    //busca pokemons salvando num array
+    const [pokemons, setPokemons] = useState([]);
     useEffect(() => {
         getPokemons();
     }, []);
-
     const getPokemons = async () => {
         var endpoints = []
         for (var i = 1; i <= 3; i++) {
@@ -32,12 +41,14 @@ export const Home = () => {
         }
     };
 
+
+    //pesquisa pokemons em todo a API
     const pesquisarPokemons = async (name) => {
         if (name === "") {
             getPokemons();
         } else {
             try {
-                const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=150`);
+                const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`);
                 const pokemonList = response.data.results;
                 const endpoints = pokemonList.map((pokemon) => pokemon.url);
 
@@ -53,6 +64,7 @@ export const Home = () => {
         }
     };
 
+
     return (
         <div>
             <Header />
@@ -66,13 +78,13 @@ export const Home = () => {
 
             <div>
                 {pokemons.map((pokemon, key) => (
-                    <Card name={pokemon.name} image={pokemon.sprites.other.dream_world.front_default} types={pokemon.types} key={key} />
+                     <Card name={pokemon.name} image={pokemon.sprites.other.dream_world.front_default} types={pokemon.types} key={key} />
                 ))}
             </div>
 
             <div className="campo">
-                <Lista pokemons={pokemons} />
-                <Telinha pokemons={pokemons} />
+                <Lista pokemons={pokemons} selecionarPokemon={selecionarPokemon}/>
+                <Telinha pokemonSelecionado={pokemonSelecionado} />
             </div>
         </div>
     );
