@@ -11,6 +11,15 @@
     margin-bottom: 30px;
     border-radius: 13px;
     background-color: #EFEFEF;
+    position: relative;
+  }
+  .div-seta{
+    position: absolute;
+    bottom: 1;
+    right: 0;
+    margin-bottom: 15px;
+    margin-right: 55px;
+    margin-top: 5px;
   }
   
   .quadro::before {
@@ -23,8 +32,8 @@
     background-color: rgba(0, 0, 255, 0);
     transform: skewX(45deg);
     border-right: 2px solid black;
-
   }
+  
   .tela{
     background-color: black;
     width: 500px;
@@ -49,4 +58,52 @@
     margin-top: 25px;
     margin-left: 25px;
   }
- 
+  .red-bola{
+    background-color: #CF0000;
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+    margin-bottom: 40px;
+  }
+
+  .red-line{
+    background-color: #CF0000;
+    width: 15%;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    margin-bottom: 65px;
+  }
+  .blue-line{
+    background-color: #1E9DC5;
+    width: 15%;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 25%;
+    margin-bottom: 65px;
+  }
+
+  .sound .s1,
+  .sound .s2,
+  .sound .s3{
+    background-color: #535151; 
+    width: 8%;
+    height: 6px;
+    position: absolute;
+    left: 44%;
+    margin-top: 10px;
+
+  }
+  .sound .s2{
+    margin-top: 20px;
+  }
+  .sound .s3{
+    margin-top: 30px;
+  }

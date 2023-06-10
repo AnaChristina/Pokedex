@@ -5,8 +5,10 @@ import { useEffect, useState } from "react";
 import Pesquisa from '../components/Pesquisa/Pesquisa'
 import Card from "../components/Card";
 import { Header } from "../components/Header";
-import Lista from "../components/Lista"
-import Telinha from "../components/Telinha"
+import Lista from "../components/Lista";
+import Telinha from "../components/Telinha";
+import Seta from "../components/Seta";
+
 
 export const Home = () => {
     const [pokemons, setPokemons] = useState([]);
@@ -17,7 +19,7 @@ export const Home = () => {
 
     const getPokemons = async () => {
         var endpoints = []
-        for (var i = 1; i <= 20; i++) {
+        for (var i = 1; i <= 3; i++) {
             endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
         }
 
@@ -108,6 +110,7 @@ export const Home = () => {
                 <Lista pokemons={pokemons} />
                 < Telinha pokemons={pokemons} />
             </div>
+            
            
         </div>
     );
