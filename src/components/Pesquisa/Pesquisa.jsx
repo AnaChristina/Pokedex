@@ -2,11 +2,7 @@ import React from "react";
 import './styles.css';
 
 
-function Pesquisa({ PesquisaPokemon }) {
-  const capturar = () => {
-    // Lógica para capturar o valor do input ou realizar qualquer ação desejada
-  };
-
+function Pesquisa({ pesquisarPokemons }) {
   return (
     <div id="" className="">
       <input
@@ -14,7 +10,7 @@ function Pesquisa({ PesquisaPokemon }) {
         id="pesquisa"
         className="mt-4 form-control text-primary pesquisa"
         placeholder="Digite o nome do pokemon"
-        onChange={(e) => PesquisaPokemon(e.target.value)}
+        onChange={(digitado) => pesquisarPokemons(digitado.target.value)}
       ></input>
     </div>
   );

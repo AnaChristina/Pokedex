@@ -32,86 +32,48 @@ export const Home = () => {
         }
     };
 
-    const PesquisaPokemon = (name) =>{
-        var filtroPokemon = []
-        if (name === ""){
+    const pesquisarPokemons = async (name) => {
+        if (name === "") {
             getPokemons();
-        }
-        for (var i in pokemons){
-            if (pokemons[i].name.includes(name)) {
-                filtroPokemon.push(pokemons[i]);
+        } else {
+            try {
+                const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=150`);
+                const pokemonList = response.data.results;
+                const endpoints = pokemonList.map((pokemon) => pokemon.url);
+
+                const pokemonResponses = await axios.all(endpoints.map((endpoint) => axios.get(endpoint)));
+                const pokemonData = pokemonResponses.map((res) => res.data);
+
+                const filteredPokemons = pokemonData.filter((pokemon) => pokemon.name.includes(name));
+
+                setPokemons(filteredPokemons);
+            } catch (error) {
+                console.log('Erro ao buscar os pokémons:', error);
             }
         }
-
-        setPokemons(filtroPokemon);
     };
-
-
-
-
-
-    const PesquisaPokemons = (name) => {
-        if (name === "") {
-          getPokemons();
-        } else {
-          TestePokemon(name);
-        }
-      };
-      
-      const TestePokemon = async (name) => {
-        try {
-          const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=150`);
-          const pokemonList = response.data.results;
-          const endpoints = pokemonList.map((pokemon) => pokemon.url);
-      
-          const pokemonResponses = await axios.all(endpoints.map((endpoint) => axios.get(endpoint)));
-          const pokemonData = pokemonResponses.map((res) => res.data);
-      
-          const filteredPokemons = pokemonData.filter((pokemon) => pokemon.name.includes(name));
-      
-          setPokemons(filteredPokemons);
-        } catch (error) {
-          console.log('Erro ao buscar os pokémons:', error);
-        }
-      };
-      
-    
-    
-    
-    
-    
-    
-    
-    
-
 
     return (
         <div>
-            
             <Header />
-            <Pesquisa PesquisaPokemon={PesquisaPokemon} />
+            <Pesquisa pesquisarPokemons={pesquisarPokemons} />
 
             <div>
-            {pokemons.map((pokemonData, key) => (
-                    <div name={pokemonData.name} image={pokemonData.sprites.other.dream_world.front_default} types ={pokemonData.types} key={key} />
+                {pokemons.map((pokemonData, key) => (
+                    <div name={pokemonData.name} image={pokemonData.sprites.other.dream_world.front_default} types={pokemonData.types} key={key} />
                 ))}
             </div>
 
-
-
-
-
-            <div PesquisaPokemons={PesquisaPokemons}>
+            <div>
                 {pokemons.map((pokemon, key) => (
-                    <Card name={pokemon.name} image={pokemon.sprites.other.dream_world.front_default} types ={pokemon.types} key={key} />
-                ))}    
+                    <Card name={pokemon.name} image={pokemon.sprites.other.dream_world.front_default} types={pokemon.types} key={key} />
+                ))}
             </div>
+
             <div className="campo">
                 <Lista pokemons={pokemons} />
-                < Telinha pokemons={pokemons} />
+                <Telinha pokemons={pokemons} />
             </div>
-            
-           
         </div>
     );
 };
