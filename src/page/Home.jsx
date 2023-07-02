@@ -94,7 +94,7 @@ export const Home = () => {
 
 
     return (
-        <div className="geral">
+        <div className="">
             <Header />
             <Pesquisa pesquisarPokemons={pesquisarPokemons} />
 
