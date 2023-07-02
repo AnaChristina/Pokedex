@@ -11,14 +11,42 @@ import Telinha from "../components/Telinha";
 export const Home = () => {
 
     // aparece foto do pokemon qnd clicado o nome dele na lista.
-    const [pokemonSelecionado, setPokemonSelecionado] = useState(
-        `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg`
-      );
-    
+    const [pokemonSelecionado, setPokemonSelecionado] = useState({
+        id: 132,
+        types: [{ type: { name: "normal" } }],
+        moves: [{ move: { name: "transform" } }],
+        image:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg",
+      });
+      
+      
+      
       const selecionarPokemon = (pokemon) => {
-        setPokemonSelecionado(pokemon.sprites.other.dream_world.front_default);
-    };
-  
+        setPokemonSelecionado({
+          name: pokemon.name,
+          id: pokemon.id,
+          types: pokemon.types,
+          moves: pokemon.moves,
+          image: pokemon.sprites.other.dream_world.front_default
+        });
+      };
+
+      useEffect(() => {
+  selecionarPokemon({
+    name: "ditto",
+    id: 132,
+    types: [{ type: { name: "normal" } }],
+    moves: [{ move: { name: "transform" } }],
+    sprites: {
+      other: {
+        dream_world: {
+          front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg"
+        }
+      }
+    }
+  });
+}, []);
+
 
 
     //busca pokemons salvando num array
@@ -28,7 +56,7 @@ export const Home = () => {
     }, []);
     const getPokemons = async () => {
         var endpoints = []
-        for (var i = 1; i <= 3; i++) {
+        for (var i = 1; i <= 500; i++) {
             endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
         }
 
@@ -48,7 +76,7 @@ export const Home = () => {
             getPokemons();
         } else {
             try {
-                const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`);
+                const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=500&offset=0`);
                 const pokemonList = response.data.results;
                 const endpoints = pokemonList.map((pokemon) => pokemon.url);
 
@@ -66,7 +94,7 @@ export const Home = () => {
 
 
     return (
-        <div>
+        <div className="geral">
             <Header />
             <Pesquisa pesquisarPokemons={pesquisarPokemons} />
 
@@ -76,11 +104,11 @@ export const Home = () => {
                 ))}
             </div>
 
-            <div>
+            {/* <div>
                 {pokemons.map((pokemon, key) => (
-                     <Card name={pokemon.name} image={pokemon.sprites.other.dream_world.front_default} types={pokemon.types} key={key} />
+                     <Card name={pokemon.name} image={pokemon.sprites.other.dream_world.front_default} types={pokemon.types} key={key}  />
                 ))}
-            </div>
+            </div> */}
 
             <div className="campo">
                 <Lista pokemons={pokemons} selecionarPokemon={selecionarPokemon}/>

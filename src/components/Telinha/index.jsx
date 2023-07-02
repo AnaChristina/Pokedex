@@ -8,9 +8,17 @@ const Telinha = ({pokemonSelecionado}) => {
     return(
         <div className="quadro">
             <div className="tela">
-                <div className="Info-Pokemon">< Infos /></div>
+                <div className="Info-Pokemon">
+                <Infos
+                    pokemonSelecionado={pokemonSelecionado}
+                    name={pokemonSelecionado.name}
+                    id={pokemonSelecionado.id}
+                    types={pokemonSelecionado.types}
+                    moves={pokemonSelecionado.moves}
+                />
+                </div>
                 <div className="pokemon-img">
-                    < Imagem src= {pokemonSelecionado} />
+                    < Imagem src= {pokemonSelecionado.image} />
                 </div>
             </div>
             <div className="div-seta">< Seta /></div>
