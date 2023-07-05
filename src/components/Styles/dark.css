@@ -1,0 +1,66 @@
+/* Tema "dark" */
+.body .dark{
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+/* Componente Header */
+.dark .Header .estilo {
+    background-color: #000000;
+}
+.dark .Header .caido{
+    background-color: #000000;
+}
+
+
+/* Componente Lista */
+.Lista.dark {
+    background-color: #000000;
+    color: #BDBDBD;
+}
+.Lista.dark .lista{
+    background-color: #000000;
+}
+.Lista.dark .cardLista:hover {
+    background-color: rgb(171, 167, 167);
+    color:#000000;
+}
+
+.Lista.dark .cardLista {
+    box-shadow: 0 4px 8px 0 rgba(116, 116, 116, 0.164);
+}
+.Lista.dark .cardLista:active{
+    background-color: rgba(54, 54, 54, 0.584);
+}
+
+
+/* Componente Telinha */
+.dark .Telinha.quadro {
+    background-color: #BD0000;
+}
+
+.dark .Telinha .red-bola{
+    background-color: #090909;
+}
+.Telinha.dark .red-line{
+    background-color: #31A280;
+}
+
+.Telinha.dark .sound .s1 {
+    background-color: #938B8B;
+}
+.Telinha.dark .sound .s2
+    {
+    background-color: #938B8B;
+}
+.Telinha.dark .sound .s3{
+    background-color: #938B8B;
+}
+
+.Botao.dark {
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  

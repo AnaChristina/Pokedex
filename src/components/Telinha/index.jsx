@@ -3,10 +3,12 @@ import './styles.css';
 import Infos from "../Infos";
 import Imagem from "../Imagem";
 import Seta from "../Seta";
+import { useState } from 'react';
 
-const Telinha = ({pokemonSelecionado}) => {
+
+const Telinha = ({pokemonSelecionado, darkMode, toggleDarkMode}) => {
     return(
-        <div className="quadro">
+        <div className={`Telinha ${darkMode ? 'dark' : ''} quadro`}>
             <div className="tela">
                 <div className="Info-Pokemon">
                 <Infos
@@ -22,7 +24,7 @@ const Telinha = ({pokemonSelecionado}) => {
                 </div>
             </div>
             <div className="div-seta">< Seta /></div>
-            <div className="red-bola"></div>
+            <div className="red-bola" onClick={toggleDarkMode}></div>
             <div className="red-line"></div>
             <div className="blue-line"></div>
             <div className="sound">

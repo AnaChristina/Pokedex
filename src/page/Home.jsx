@@ -8,7 +8,8 @@ import Lista from "../components/Lista";
 import Telinha from "../components/Telinha";
 
 
-export const Home = () => {
+
+export const Home = ({ darkMode, toggleDarkMode }) => {
 
     // aparece foto do pokemon qnd clicado o nome dele na lista.
     const [pokemonSelecionado, setPokemonSelecionado] = useState({
@@ -111,8 +112,8 @@ export const Home = () => {
             </div> */}
 
             <div className="campo">
-                <Lista pokemons={pokemons} selecionarPokemon={selecionarPokemon}/>
-                <Telinha pokemonSelecionado={pokemonSelecionado} />
+                <Lista darkMode={darkMode} pokemons={pokemons} selecionarPokemon={selecionarPokemon}/>
+                <Telinha darkMode={darkMode} toggleDarkMode={toggleDarkMode} pokemonSelecionado={pokemonSelecionado} />
             </div>
         </div>
     );

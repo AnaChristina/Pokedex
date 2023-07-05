@@ -1,8 +1,8 @@
 import './styles.css';
 
-export function Header(){
+export function Header({darkMode}){
     return(
-        <div className='div'>
+        <div className={`Header ${darkMode ? 'dark' : ''} div`}>
             <div className='circulo'></div>
 
             <div className="red bola"> </div>
@@ -10,7 +10,7 @@ export function Header(){
             <div className="blue bola"> </div>
             
             <header  className="estilo"></header>
-            <div className='caido'></div>
+            <div className={`Header ${darkMode ? 'dark' : ''} caido`}></div>
         </div>
     )
 }
