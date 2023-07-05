@@ -14,7 +14,8 @@
   <a href="#funcionalidades">Funcionalidades</a> •
   <a href="#tecnologias-utilizadas">Tecnologias utilizadas</a> •
   <a href="#executando-projeto">Executando Projeto</a> •
- <a href="#uso">Uso</a> •
+  <a href="#uso">Uso</a> •
+  <a href="#gif">Gifs</a> •
 </p>
 Screenshot
 
@@ -52,4 +53,11 @@ O projeto será aberto em: `http://localhost:3000/` se o projeto não abrir auto
 - Clique no nome de um Pokémon dentro da lista para visualizar a imagem e as informações detalhadas sobre ele.
 - Utilize a barra de pesquisa para encontrar um Pokémon específico.
 - Para alterar tema, clique no botão vermelho abaixo da tela de informações do pokemon.
+
+### Gifs
+
+https://github.com/AnaChristina/Pokedex/assets/43580298/107f1f1a-e652-4e37-95f6-5f7855875c20
+
+https://github.com/AnaChristina/Pokedex/assets/43580298/3544a9de-fb74-4d64-b33d-d52968f33849
+
 
