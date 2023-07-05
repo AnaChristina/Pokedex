@@ -36,7 +36,7 @@ Screenshot
 ## Executando Projeto
 
 Para executar o projeto, primeiro faça um clone do repositório utilizando terminal, atente-se ao local onde irá salvar. <br>
-`git clone https://github.com/AnaChristina/Pokedex/.git`
+`git clone https://github.com/AnaChristina/Pokedex.git`
 
 Navegue até o diretóriodo em que você salvou o projeto<br>
 `cd pokedex`
