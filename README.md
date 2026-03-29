@@ -29,8 +29,7 @@ Screenshot
 
 ## Tecnologias Utilizadas
 - <img align="center"  height="20" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg">**Figma:** Criação Layout</img> 
-- <img align="center"  height="20" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">**React Native:** Utilizei para criar o projeto. 
-- <img align="center"  height="20" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">**HTML:** Estruturação
+- <img align="center"  height="20" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">**React:** Utilizei para criar o projeto. 
 - <img align="center"  height="20" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">**CSS:** Estilo
 - <img align="center"  height="20" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">**Javascript:** Desenvolvimento
 
